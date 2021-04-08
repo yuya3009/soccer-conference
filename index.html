@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/panel.css">
     <link rel="icon" type="images/download.jpg" href="favicon.ico">
   </head>
    
@@ -42,6 +43,37 @@
       <h2>日本語のページ</h2>
     </section>
 
-    <script src="script.js"></script>
+    <section>
+      <p><button id="testbtn">テスト用 cookie削除</button></p>
+    </section>
+
+    <div id="privacy-panel">
+      <p>当サイトではユーザーエクスペリエンス向上のためクッキーを使用しています。また、
+        匿名でアクセス状況のデータを収集しています。詳しい情報は当サイトのプライバシーポリシー
+        をご覧ください。</p>
+        <button id="agreebtn">承認する</button>
+    </div>
+
+    <script src="js.cookie.js"></script>
+    <script>
+      'use strict';
+
+      const agree = Cookies.get('cookie-agree');
+      const panel = document.getElementById('privacy-panel');
+      if(agree === 'yes') {
+        document.body.removeChild(panel);
+      } else {
+        document.getElementById('agreebtn').onclick = function() {
+          Cookies.set('cookie-agree', 'yes', {expires: 7});
+          document.body.removeChild(panel);
+        };
+      }
+
+      // クッキー削除（テスト用）
+      document.getElementById('testbtn').onclick = function() {
+        Cookied.remove('cookie-agree');
+      };
+    </script>
+
   </body>
 </html>
