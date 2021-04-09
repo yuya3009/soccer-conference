@@ -41,10 +41,10 @@
         </div>
 
         <ul>
-          <li><img src="images/con1.jpg" class="soccer" data-image="con1.jpg"></li>
-          <li><img src="images/con2.jpg" class="soccer" data-image="con2.jpg"></li>
-          <li><img src="images/con3.jpg" class="soccer" data-image="con3.jpg"></li>
-          <li><img src="images/con4.jpg" class="soccer" data-image="con4.jpg"></li>
+          <li><img src="images/con1.jpg" class="soccer" data-image="images/con1.jpg"></li>
+          <li><img src="images/con2.jpg" class="soccer" data-image="images/con2.jpg"></li>
+          <li><img src="images/con3.jpg" class="soccer" data-image="images/con3.jpg"></li>
+          <li><img src="images/con4.jpg" class="soccer" data-image="images/con4.jpg"></li>
         </ul>
       </div>
     </section>
@@ -61,7 +61,7 @@
       const soccers = document.querySelectorAll('.soccer');
       soccers.forEach(function(item, index) {
         item.onclick = function() {
-          console.log(this.dataset.image);
+          document.getElementById('bigimg').src = this.dataset.image;
         }
       });
     </script>
