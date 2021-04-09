@@ -300,13 +300,27 @@ aside p {
    margin-top: 20%;
  }
  
- .big-box {
-   grid-column: auto;
-   grid-row: auto;
- }
- .big-box img {
-   height: auto;
- }
+  section img {
+    max-width: 100%;
+  }
+  .center {
+    margin: 0 auto 0 auto;
+    max-width: 90%;
+    width: 500px;
+  }
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  li {
+    flex: 1 1 auto;
+    margin-right: 10px;
+  }
+  li:last-of-type {
+    margin-right: 0;
+  }
 }
 
 /*Conference*/
@@ -328,14 +342,6 @@ aside p {
 .conference-content p {
   font-size: 15px;
   margin: 10px 0 0;
-}
-
-.grid {
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-top: 6%;
-  margin-bottom: 50px;
 }
 
 /*contact*/

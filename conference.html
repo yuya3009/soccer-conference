@@ -34,39 +34,36 @@
         </div>
     </div>
     
-    <div class="wrapper grid">
-      <div class="item big-box">
-        <img src="images/con1.jpg" alt="">
-        <p>写真キャプション</p>
+    <section>
+      <div class="center">
+        <div>
+          <img src="images/con1.jpg" id="bigimg">
+        </div>
+
+        <ul>
+          <li><img src="images/con1.jpg" class="soccer" data-image="con1.jpg"></li>
+          <li><img src="images/con2.jpg" class="soccer" data-image="con2.jpg"></li>
+          <li><img src="images/con3.jpg" class="soccer" data-image="con3.jpg"></li>
+          <li><img src="images/con4.jpg" class="soccer" data-image="con4.jpg"></li>
+        </ul>
       </div>
-      <div class="item">
-        <img src="images/con2.jpg" alt="">
-        <p>写真キャプション</p>
-      </div>
-      <div class="item">
-        <img src="images/con3.jpg" alt="">
-        <p>写真キャプション</p>
-      </div>
-      <div class="item">
-        <img src="images/con4.jpg" alt="">
-        <p>写真キャプション</p>
-      </div>
-      <div class="item">
-        <img src="images/con5.jpg" alt="">
-        <p>写真キャプション</p>
-      </div>
-      <div class="item">
-        <img src="images/con6.jpg" alt="">
-        <p>写真キャプション</p>
-      </div>
-    </div>
-    
-    
-    
+    </section>
+
     <footer>
       <div class="wrapper">
         <p><small>&copy; 2021 Y.yuya</small></p>
       </div>
     </footer>
+
+    <script>
+      'use strict';
+
+      const soccers = document.querySelectorAll('.soccer');
+      soccers.forEach(function(item, index) {
+        item.onclick = function() {
+          console.log(this.dataset.image);
+        }
+      });
+    </script>
   </body>
 </html>
