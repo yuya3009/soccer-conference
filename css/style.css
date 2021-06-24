@@ -27,20 +27,18 @@ img {
   margin-top: 13px;
 }
 
-.main-nav {
-  display: flex;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  margin-top: 30px;
+.main-nav li {
+  margin-left: 0;
+  padding: 0;
   list-style: none;
 }
 
-.main-nav li {
-  margin-left: 34px;
-}
-
 .main-nav a {
+  display: block;
+  padding: 0 3px 0;
+  text-decoration: none;
   color: #432;
+  text-align: left;
 }
 
 .main-nav a:hover {
@@ -231,6 +229,28 @@ aside p {
   color: #0bd;
 }
 
+ /*サイドバー*/
+.submenu h3 {
+  margin: 0 0 2px 0;
+  font-size: 16px;
+  cursor: pointer;
+  color: #5e78c1;
+}
+.submenu h3:hover {
+  color: #b04188;
+  text-decoration: underline;
+}
+.submenu ul {
+  margin: 0 0 2px 0;
+  list-style-type: none;
+  font-size: 14px;
+}
+.hidden {
+  display: none;
+}
+
+
+
 /*モバイル用*/
 @media (max-width: 600px) {
   .page-title {
@@ -279,7 +299,7 @@ aside p {
     margin-left: 80px;
   }
 
-
+ 
   /*head*/
   .main-nav {
     font-size: 10px;

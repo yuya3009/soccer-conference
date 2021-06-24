@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.container {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.bar {
+  flex: 0 0 32px;
+  align-self: center;
+  margin-left: 16px;
+  text-align: center;
+  color: #fff;
+}
+
+#nav {
+  position: fixed;
+  right: -270px;
+  top: 0;
+  width: 270px;
+  height: 100%;
+}
+
+.show {
+  transform: translate3d(-270px, 0, 0);
+}

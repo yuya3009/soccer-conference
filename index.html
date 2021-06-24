@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="css/drawer.css">
     <link rel="icon" type="images/download.jpg" href="favicon.ico">
   </head>
    
@@ -16,7 +17,10 @@
     <div id="home" class="big-bg">
       <header class="page-header wrapper">
         <h1><a href="index.html"><img class="logo" src="images/redbull.png" alt="Soccer Conferenceホーム"></a></h1>
-        <nav>
+        <div class="bar" id="open_bar">
+          <img src="images/bar.png" alt="">
+        </div>
+        <nav id="nav" class="show">
           <ul class="main-nav">
             <li><a href="news.html">News</a></li>
             <li><a href="conference.html">Conference</a></li>
@@ -32,21 +36,6 @@
       </div>
     </div>
 
-    <section>
-      <form id="form">
-        <select name="select">
-          <option value="index.html">日本語</option>
-          <option value="news.html">English</option>
-          <option value="conference.html">中文</option>
-        </select>
-      </form>
-      <h2>日本語のページ</h2>
-    </section>
-
-    <section>
-      <p><button id="testbtn">テスト用 cookie削除</button></p>
-    </section>
-
     <div id="privacy-panel">
       <p>当サイトではユーザーエクスペリエンス向上のためクッキーを使用しています。また、
         匿名でアクセス状況のデータを収集しています。詳しい情報は当サイトのプライバシーポリシー
@@ -54,25 +43,15 @@
         <button id="agreebtn">承認する</button>
     </div>
 
-    <script src="javascript/js.cookie.js"></script>
+    <script src="javascript/jquery.js"></script>
     <script>
       'use strict';
 
-      const agree = Cookies.get('cookie-agree');
-      const panel = document.getElementById('privacy-panel');
-      if(agree === 'yes') {
-        document.body.removeChild(panel);
-      } else {
-        document.getElementById('agreebtn').onclick = function() {
-          Cookies.set('cookie-agree', 'yes', {expires: 7});
-          document.body.removeChild(panel);
-        };
-      }
-
-      // クッキー削除（テスト用）
-      document.getElementById('testbtn').onclick = function() {
-        Cookied.remove('cookie-agree');
-      };
+      $(document).ready(function(){
+        $('#open_nav').on('click', function(){
+          $('#nav').toggleClass('show');
+        });
+      });
     </script>
 
   </body>

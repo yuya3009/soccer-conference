@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>サッカーConference</title>
+    <meta name="description" content="サッカーを日常に!">
+    
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/panel.css">
+    <link rel="icon" type="images/download.jpg" href="favicon.ico">
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <h2>サポートページ</h2>
+      <div class="submenu">
+        <h3>1.使い方</h3>
+        <ul class="hidden">
+          <li><a href="">- 概要</a></li>
+          <li><a href="">- 使い方</a></li>
+        </ul>
+      </div>
+      <div class="submenu">
+        <h3>2.ご意見箱</h3>
+        <ul class="hidden">
+          <li><a href="">- ご意見はこちらへ</a></li>
+          <li><a href="">- クレーム</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="javascript/jquery.js"></script>
+    <script>
+      'use strict';
+
+      $(document).ready(function(){
+        $('.submenu h3').on('click', function(){
+          $(this).next().toggleClass('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>
